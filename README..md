@@ -1,10 +1,18 @@
-# 📝 taskboard-js
+# 📝 TaskBoard JS
 
-Aplicação de lista de tarefas estilo Kanban com drag-and-drop, filtros e persistência de dados no navegador.
+🔗 Demo: https://bruno123-n.github.io/taskboard-js/
+
+Aplicação de gerenciamento de tarefas estilo Kanban desenvolvida com JavaScript puro, utilizando drag-and-drop, filtros, persistência com localStorage e arquitetura modular.
 
 ---
 
 ## 🚀 Funcionalidades
+
+- ✅ Sistema de prioridades
+- ✅ Dark mode
+- ✅ Modal de confirmação
+- ✅ Toast de feedback
+- ✅ Responsividade
 
 - ✅ Adicionar tarefas
 - ✅ Editar tarefas
@@ -55,6 +63,17 @@ git clone URL_DO_REPOSITORIO
 
 ---
 
+
+## 📁 Estrutura do projeto
+
+taskboard-js/
+│
+├── css/
+├── js/
+├── index.html
+└── README.md
+
+
 ## 📌 Status do projeto
 
-🚧 Novas funcionalidades em desenvolvimento
+✅ Projeto finalizado e recebendo melhorias contínuas

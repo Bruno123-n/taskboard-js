@@ -10,11 +10,11 @@ import { tarefaParaRemover } from './state.js'
 import { fecharModal } from './ui.js'
 
 const input = document.getElementById('inputTarefa')
+const adicionar = document.getElementById('addBtn')
 
 //função adicionar tarefa
 export function adicionarTarefa() {
     const texto = input.value.trim()
-    document.getElementById('addBtn').disabled = true
     const prioridade = document.getElementById('prioridade').value
     if (!texto) return
 
@@ -25,8 +25,8 @@ export function adicionarTarefa() {
         texto,
         status: 'todo',
         editando: false,
-        criadaEm: new Date().toLocaleDateString('pt-BR'),
-        prioridade: prioridade
+        prioridade,
+        criadaEm: new Date().toLocaleDateString('pt-BR')
     }
     
     tarefas.push(tarefa)
