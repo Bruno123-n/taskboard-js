@@ -1,0 +1,359 @@
+body {
+    margin: 0;
+    background: #f0f2f5;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body.dark {
+    background: #121212;
+    color: #f5f5f5;
+}
+
+/* body.dark .app {
+    background: #1e1e1e;
+} */
+
+body.dark .coluna {
+    background: #2a2a2a;
+}
+
+body.dark input {
+    background: #333;
+    color: white;
+    border: 1px solid #555;
+}
+
+body.dark input::placeholder {
+    color: #bbb;
+}
+
+body.dark li {
+    background: #3a3a3a;
+    color: white;
+}
+
+body.dark h3 {
+    color: white;
+}
+
+body.dark #contador {
+    color: white;
+}
+
+body.dark .btn-remover {
+    background: #444 !important;
+    color: white !important;
+}
+
+body.dark .btn-concluir {
+    background: #444 !important;
+    color: white !important;
+}
+
+body.dark .btn-editar {
+    background: #444 !important;
+    color: white !important;
+}
+
+.dark {
+    background: #121212;
+    color: white;
+}
+
+.dark .app {
+    background: #1e1e1e;
+}
+
+#toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+
+    background: #333;
+    color: white;
+
+
+    padding: 12px 20px;
+
+
+    border-radius: 8px;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 0.3s;
+}
+
+#toast.show {
+    opacity: 1;
+}
+
+#modal {
+    position: fixed;
+    inset: 0;
+    
+    background: rgba(0,0,0,0.5);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.app {
+    width: 90%;
+    max-width: 500px;
+    margin: 60px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.badge-prioridade {
+    padding: 4px 8px;
+    border-radius: 6px;
+    
+    font-size: 12px;
+    color: white;
+}
+
+.alta {
+    background: red;
+}
+
+.media {
+    background: orange;
+}
+
+.baixa {
+    background: green;
+}
+
+.prioridade-alta {
+    border-left: 5px solid red;
+}
+
+.prioridade-media {
+    border-left: 5px solid orange;
+}
+
+.prioridade-baixa {
+    border-left: 5px solid green;
+}
+
+button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#addBtn {
+    width: 100%;
+    background: #007bff;
+    color: white;
+    margin-bottom: 15px;
+}
+
+#addBtn:hover {
+    background: #0056b3;
+}
+
+.filtros button {
+    flex: 1;
+    background: #e0e0e0;
+}
+
+.filtros button:hover {
+    background: #d0d0d0;
+}
+
+.filtros button.ativo {
+    background: #007bff;
+    color: white;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: #fafafa;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.2s;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: aparecer 0.3s forwards;
+}
+
+@keyframes aparecer {
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+li:hover {
+    background: #f1f1f1;
+}
+
+li:active {
+    transform: scale(0.98);
+}
+
+span.concluida {
+    text-decoration: line-through;
+    color: gray;
+}
+li button {
+    margin-left: 5px;
+}
+
+.edit-input {
+    width: 70%;
+}
+
+.empty {
+    text-align: center;
+    color: #777;
+    margin-top: 20px;
+}
+
+.dragging {
+    opacity: 0.5;
+    transform: scale(0.95);
+}
+
+.drag-over {
+    border: 2px dashed #007bff;
+    background: #eaf4ff;
+
+}
+
+.drag-over-coluna {
+    border: 2px dashed #007bff;
+    background-color: #e6f0ff;
+}
+
+.board {
+    display: flex;
+    gap: 10px;
+}
+
+.coluna {
+    flex: 1;
+    background: #f4f4f4;
+    padding: 10px;
+    border-radius: 8px;
+    min-height: 200px;
+}
+
+@media (max-width: 768px) {
+
+    input, select, button {
+    width: 100%;
+    }
+
+    .board {
+    gap: 15px;
+    }
+
+    .coluna {
+    width: 100%;
+    }
+
+    .app {
+        margin: 20px auto;
+        padding: 15px;
+        gap: 12px;
+
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    li div {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    }
+
+    li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        transition: 0.2s ease;
+    }
+
+    li:hover {
+    transform: translateY(-2px);
+    }
+
+    li.nova {
+        background: #d4edda;
+    }
+
+    button {
+        min-height: 40px;
+    }
+
+    li button {
+        width: 100%;
+    }
+
+    button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    .edit-input {
+        width: 100%;
+    }
+
+    .filtros {
+        flex-direction: column;
+    }
+
+    .filtros button {
+        width: 100%;
+    }
+
+    .board {
+    flex-direction: column;
+    }
+}

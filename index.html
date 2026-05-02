@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to do list</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
+<div class="app">
+    <h1>Minhas Tarefas</h1>
+    <button id="toggleTema">🌙</button>
+
+    <input type="text" id="inputTarefa" placeholder="Digite uma tarefa">
+    <button id="addBtn">Adicionar</button>
+
+    <select id="prioridade">
+        <option value="baixa">Baixa</option>
+        <option value="media">Média</option>
+        <option value="alta">Alta</option>
+    </select>
+
+    <div class="filtros">
+        <button data-filtro="todas">Todas</button>
+        <button data-filtro="pendentes">Pendentes</button>
+        <button data-filtro="concluidas">Concluidas</button>
+    </div>
+
+    <input type="text" id="busca" placeholder="Buscar tarefa...">
+
+    <p id="contador"></p>
+    <p id="rest"></p>
+
+    <div class="board">
+        <div class="coluna" data-status="todo">
+            <h3 id="tituloTodo">A fazer</h3>
+            <ul id="todo"></ul>
+        </div>
+        <div class="coluna" data-status="doing">
+            <h3 id="tituloDoing">fazendo</h3>
+            <ul id="doing"></ul>
+        </div>
+        <div class="coluna" data-status="done">
+            <h3 id="tituloDone">Concluido</h3>
+            <ul id="done"></ul>
+        </div>
+        <div>
+            <button id="limparConcluidas">Limpar concluídas</button>
+        </div>
+    </div>
+</div>
+<div id="toast"></div>
+<div id="modalConfirmação"></div>
+
+<div id="modal" class="hidden">
+    <div class="modal-content">
+        <p>Deseja remover essa tarefa?</p>
+        <button id="confirmarRemocao">
+            Sim
+        </button>
+        <button id="cancelarRemocao">
+            Cancelar
+        </button>
+    </div>
+</div>
+
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>
